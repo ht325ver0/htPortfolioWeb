@@ -4,8 +4,9 @@ import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
+  <Header />
   <div class="min-h-screen bg-background">
-    <Header />
+    
   <div>
     <a href="https://vite.dev" target="_blank">
       <img src="/vite.svg" class="logo" alt="Vite logo" />
@@ -18,6 +19,21 @@ import HelloWorld from './components/HelloWorld.vue'
   <HelloWorld msg="Vite + Vue" />
   </div>
 </template>
+
+<style>
+/* Viteのデフォルトスタイルをリセット */
+body {
+  display: block;
+  place-items: unset;
+}
+
+#app {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+</style>
 
 <style scoped>
 .logo {

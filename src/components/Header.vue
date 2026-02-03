@@ -1,14 +1,18 @@
-<template>
-    <header class="justify-end flex p-4 w-full sticky top-0">
-            <Button variant="outline">
-                Button
-            </Button>
-            <Button variant="outline">
-                Button
-            </Button>
-            <Button variant="outline">
-                Button
-            </Button>
-    </header>
+<script setup lang="ts">
+import { Button } from '@/components/ui/button'
+</script>
 
+
+<template>
+    <header class="justify-end flex gap-4 p-4 w-full sticky top-0">
+        <Button variant="ghost" size="lg">
+            Home
+        </Button>
+        <Button variant="ghost" size="lg">
+            History
+        </Button>
+        <Button variant="ghost" size="lg">
+            About Me
+        </Button>
+    </header>
 </template>
