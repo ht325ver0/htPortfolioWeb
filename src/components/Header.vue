@@ -5,7 +5,10 @@ import { Separator } from '@/components/ui/separator'
 
 
 <template>
-    <header class="justify-end flex items-center gap-4 p-4 w-full sticky top-0 bg-white/50 backdrop-blur-md h-20">
+    <header class="flex items-center gap-4 p-4 w-full sticky top-0 bg-white/50 backdrop-blur-md h-15">
+        <h2 class="text-3xl font-bold mr-auto">
+            Portfolio
+        </h2>
         <Button variant="ghost" size="lg">
             Home
         </Button>
