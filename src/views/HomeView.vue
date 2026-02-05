@@ -3,6 +3,5 @@ import Header from '../components/Header.vue';
 </script>
 
 <template>
-    <Header />
     <h1>Home View</h1>
 </template>
