@@ -19,7 +19,7 @@ const navItems = [
         </h2>
         <template v-for="(item, index) in navItems" :key="item.name" >
             <Button asChild variant="ghost" size="lg" >
-                <router-link :to="item.url" class="text-black">
+                <router-link :to="item.url">
                     {{ item.name }}
                 </router-link>
             </Button>
