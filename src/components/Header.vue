@@ -1,6 +1,13 @@
 <script setup lang="ts">
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
+
+const navItems = [
+  { name: 'Home' },
+  { name: 'History' },
+  { name: 'About Me' },
+]
+
 </script>
 
 
@@ -9,20 +16,11 @@ import { Separator } from '@/components/ui/separator'
         <h2 class="text-3xl font-bold mr-auto">
             Portfolio
         </h2>
-        <Button variant="ghost" size="lg">
-            Home
-        </Button>
-        
-        <Separator orientation="vertical" />
-        
-        <Button variant="ghost" size="lg">
-            History
-        </Button>
-        
-        <Separator orientation="vertical" />
-        
-        <Button variant="ghost" size="lg">
-            About Me
-        </Button>
+        <template v-for="(item, index) in navItems" :key="item.name">
+            <Button variant="ghost" size="lg">
+                {{ item.name }}
+            </Button>
+            <Separator v-if="index < navItems.length - 1" orientation="vertical" />
+        </template>
     </header>
 </template>
