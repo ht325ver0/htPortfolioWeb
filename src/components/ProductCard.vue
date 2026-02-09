@@ -18,13 +18,13 @@ import {
       class="h-full w-full rounded-lg object-cover dark:brightness-[0.2] dark:grayscale"
     >
     <Card class="absolute bottom-1 left-1 right-1 bg-white/50 backdrop-blur-md opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-    <CardHeader>
-      <CardTitle class="text-3xl">Card Title</CardTitle>
-      <CardDescription>Card Description</CardDescription>
-    </CardHeader>
-    <CardFooter>
-      <p>Card Footer</p>
-    </CardFooter>
-  </Card>
+        <CardHeader>
+            <CardTitle class="text-3xl">Card Title</CardTitle>
+            <CardDescription>Card Description</CardDescription>
+            </CardHeader>
+            <CardFooter>
+            <p>Card Footer</p>
+        </CardFooter>
+    </Card>
   </AspectRatio>
 </template>
