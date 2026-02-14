@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { getTechColor } from '@/lib/constants'
 import { AspectRatio } from '@/components/ui/aspect-ratio'
 import {
   Card,
@@ -13,13 +13,17 @@ import {
     TagsInputItemText } 
 from '@/components/ui/tags-input'
 
-const props = defineProps({
-    title: String,
-    description: String,
-    tags: Array,
-})
+interface Props {
+  title?: string
+  description?: string
+  tags?: string[]
+}
 
-const frameworksRef = ref(['Vue', 'TypeScript'])
+const props = withDefaults(defineProps<Props>(), {
+  title: 'Card Title',
+  description: 'Card Description',
+  tags: () => ['Vue', 'TypeScript'],
+})
 </script>
 
 <template>
@@ -44,7 +48,7 @@ const frameworksRef = ref(['Vue', 'TypeScript'])
         <CardHeader>
             <CardTitle class="text-3xl">Card Title</CardTitle>
             <TagsInput 
-                v-model="frameworksRef" 
+                :model-value="tags" 
                 class="w-full 
                 bg-transparent 
                 border-none 
@@ -53,10 +57,10 @@ const frameworksRef = ref(['Vue', 'TypeScript'])
                 gap-2"
             >
                 <TagsInputItem 
-                    v-for="item in frameworksRef" 
+                    v-for="item in tags" 
                     :key="item" 
                     :value="item"
-                    class="bg-white/100"
+                    :class="[getTechColor(item), 'h-7 px-1']"
                 >
                     <TagsInputItemText />
                 </TagsInputItem>
