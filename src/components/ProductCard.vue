@@ -17,27 +17,31 @@ interface Props {
   title?: string
   description?: string
   tags?: string[]
+  imageUrl?: string
+  imageAlt?: string
 }
 
 const props = withDefaults(defineProps<Props>(), {
   title: 'Card Title',
   description: 'Card Description',
   tags: () => ['Vue', 'TypeScript'],
+  imageUrl: 'https://images.unsplash.com/photo-1588345921523-c2dcdb7f1dcd?w=800&dpr=2&q=80',
+  imageAlt: 'Product Image',
 })
 </script>
 
 <template>
   <AspectRatio :ratio="13 / 9" class="bg-muted rounded-lg group">
     <img
-      src="https://images.unsplash.com/photo-1588345921523-c2dcdb7f1dcd?w=800&dpr=2&q=80"
-      alt="Photo by Drew Beamer"
+      :src="imageUrl"
+      :alt="imageAlt"
       class="h-full w-full rounded-lg object-cover dark:brightness-[0.2] dark:grayscale"
     >
     <Card class="absolute 
         bottom-0
         left-0
         right-0
-        top-50
+        top-[50%]
         bg-white/50 
         backdrop-blur-md 
         opacity-0 
@@ -46,7 +50,7 @@ const props = withDefaults(defineProps<Props>(), {
         group-hover:opacity-100"
     >
         <CardHeader>
-            <CardTitle class="text-3xl">Card Title</CardTitle>
+            <CardTitle class="text-3xl">{{ title }}</CardTitle>
             <TagsInput 
                 :model-value="tags" 
                 class="w-full 
@@ -67,7 +71,7 @@ const props = withDefaults(defineProps<Props>(), {
             </TagsInput>
             </CardHeader>
             <CardFooter>
-                <p>Card Footer</p>
+                <p>{{description}}</p>
             </CardFooter>
     </Card>
   </AspectRatio>
